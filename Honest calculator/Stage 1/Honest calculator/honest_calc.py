@@ -18,3 +18,4 @@ while True:
 print(message[2])
 
 # dodać na wykresie komendę dla input
+# the tests should be in one line every input in one line.

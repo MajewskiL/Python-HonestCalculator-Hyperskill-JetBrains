@@ -64,3 +64,4 @@ while True:
 # na wykresie dodać print(message[2])
 # dać zmienną to pytań y/n
 # zmienna result ma być zainicjowna przed pętlami!!!!
+# dodać w opisie, że inicja;

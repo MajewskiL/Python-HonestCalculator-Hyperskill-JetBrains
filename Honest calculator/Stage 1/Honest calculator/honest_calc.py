@@ -3,7 +3,7 @@ message = ["Maybe next time you add your leg to the head?",
            "Awesome! You can enter the equation! :)"]
 
 while True:
-    number = input("Enter the equation")
+    number = input("Enter the equation: ")
     number = number.split(" ")
     oper = number[1]
     try:

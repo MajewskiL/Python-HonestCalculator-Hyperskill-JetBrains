@@ -40,3 +40,4 @@ print(f"{x} {oper} {y} = {result}")
 # dodać na wykresie komendę dla input
 # result = 0 w deklaracjach
 # na wykresie dodać print(message[2])
+# w przykładach testowych wziąc -1.1.1. oraz 1-000 żeby

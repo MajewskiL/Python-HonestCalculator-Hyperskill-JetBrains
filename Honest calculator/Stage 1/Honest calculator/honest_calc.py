@@ -1,21 +1,13 @@
-message = ["Maybe next time you add your leg to the head?",
-           "You must have been good at math, hehe ...",
-           "Awesome! You can enter the equation! :)"]
+msg_1 = "Do you know what numbers are? Focus!"
+msg_2 = "Yes ... an interesting math operation. Did you sleep in class?"
 
 while True:
-    number = input("Enter the equation: ")
-    number = number.split(" ")
-    oper = number[1]
-    try:
-        x = float(number[0])
-        y = float(number[2])
-        if oper not in "+-*/":
-            print(message[1])
+    calc = input()
+    x, oper, y = calc.split(" ")
+    if not x.isdigit() or not y.isdigit():
+        print(msg_1)
+    else:
+        if oper not in "*/+-":
+            print(msg_2)
         else:
             break
-    except ValueError:
-        print(message[0])
-print(message[2])
-
-# dodać na wykresie komendę dla input
-# the tests should be in one line every input in one line.

@@ -1,67 +1,66 @@
-message = ["Maybe next time you add your leg to the head?",
-           "You must have been good at math, hehe ...",
-           "Awesome! You can enter the equation! :)",
-           "You gotta be really smart if you divide by zero!",]
+msg_1 = "Do you know what numbers are? Focus!"
+msg_2 = "Yes ... an interesting math operation. Did you sleep in class?"
+msg_3 = "Yeah... division by zero. Smart move..."
+msg_4 = "Do you want to remember the result (y / n):"
+msg_5 = "Do you want continue calculations? (y / n):"
+msg_6 = " ... lazy"
+msg_7 = " ... very lazy"
+msg_8 = " ... very, very lazy"
+msg_9 = "You are"
+memory = "0"
 
-
-#  not done, prepare function
-def check_function(num1, operator, num2):
+def is_one_digit(v):
+    if v > -10 and v < 10 and v == round(v):
+        return True
     return False
 
+def check(v1, v2, v3):
+    msg = ""
+    if is_one_digit(v1) and is_one_digit(v2):
+        msg += msg_6
+    if v1 == 1 or v2 == 1 and v3 == "*":
+        msg += msg_7
+    if v1 == 0 or v2 == 0 and v3 == "*":
+        msg += msg_8
+    if msg:
+        msg = msg_9 + msg
+        print(msg)
 
-memory = 0
+
 while True:
-    while True:
-        while True:
-            number = input("Enter the equation: ")
-            number = number.split(" ")
-            oper = number[1]
-            result = 0
-            try:
-                if number[0] == "M":
-                    x = memory
-                else:
-                    x = float(number[0])
-                if number[2] == "M":
-                    y = memory
-                else:
-                    y = float(number[2])
-                if oper not in "+-*/":
-                    print(message[1])
-            except ValueError:
-                print(message[0])
-            ans = check_function(x, oper, y)
-            if ans:
-                print(ans)
-            else:
-                break
-        if oper == "+":
-            result = x + y
-            break
-        elif oper == "-":
-            result = x - y
-            break
-        elif oper == "*":
-            result = x * y
-            break
-        elif oper == "/":
-            if y != 0:
+    calc = input()
+    x, oper, y = calc.split(" ")
+    if x == "M":
+        x = memory
+    if y == "M":
+        y = memory
+    try:
+        x = float(x)
+        y = float(y)
+    except ValueError:
+        print(msg_1)
+    else:
+        if oper not in "*/+-":
+            print(msg_2)
+        else:
+            check(x, y, oper)
+            if oper == "+":
+                result = x + y
+            elif oper == "-":
                 result = x - y
-                break
+            elif oper == "*":
+                result = x * y
+            elif oper == "/" and y != 0:
+                result = x / y
             else:
-                print(message[3])
-    print(message[2])
-    print(f"{x} {oper} {y} = {result}")
-    ans = input("Do you want remember the result? y/n: ")
-    if ans == "y":
-        memory = result
-    ans = input("Do you want to coninue? y/n: ")
-    if ans == "n":
-        break
-
-# dodać na wykresie komendę dla input
-# result = 0 w deklaracjach
-# na wykresie dodać print(message[2])
-# dać zmienną to pytań y/n
-# zmienna result ma być zainicjowna przed pętlami!!!!
-# dodać w opisie, że inicja;
+                print(msg_3)
+                continue
+            print(result)
+            print(msg_4)
+            answer = input()
+            if answer == "y":
+                memory = str(result)
+            print(msg_5)
+            answer = input()
+            if answer != "y":
+                break

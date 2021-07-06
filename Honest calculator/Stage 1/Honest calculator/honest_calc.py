@@ -8,7 +8,7 @@ while True:
     x, oper, y = calc.split(" ")
     try:
         x = float(x)
-        y= float(y)
+        y = float(y)
     except ValueError:
         print(msg_1)
         continue

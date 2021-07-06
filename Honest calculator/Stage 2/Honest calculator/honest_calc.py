@@ -1,28 +1,32 @@
-msg_1 = "Do you know what numbers are? Focus!"
+msg_0 = "Enter the equation"
+msg_1 = "Do you know what the numbers are? Focus!"
 msg_2 = "Yes ... an interesting math operation. Did you sleep in class?"
 msg_3 = "Yeah... division by zero. Smart move..."
 
 while True:
+    print(msg_0)
     calc = input()
     x, oper, y = calc.split(" ")
-    if not x.isdigit() or not y.isdigit():
+    try:
+        x = float(x)
+        y = float(y)
+    except ValueError:
         print(msg_1)
+        continue
+    if oper not in "*/+-":
+        print(msg_2)
     else:
-        if oper not in "*/+-":
-            print(msg_2)
+        if oper == "+":
+            result = x + y
+        elif oper == "-":
+            result = x - y
+        elif oper == "*":
+            result = x * y
+        elif oper == "/" and y != 0:
+            result = x / y
         else:
-            x = int(x)
-            y = int(y)
-            if oper == "+":
-                result = x + y
-            elif oper == "-":
-                result = x - y
-            elif oper == "*":
-                result = x * y
-            elif oper == "/" and y != 0:
-                result = x / y
-            else:
-                print(msg_3)
-                continue
-            print(result)
-            break
+            print(msg_3)
+            continue
+        print(result)
+        break
+

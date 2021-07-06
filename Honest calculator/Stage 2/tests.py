@@ -27,7 +27,7 @@ class FoodBlogStage1(StageTest):
             return CheckResult.wrong(f"Expected: ({msg[0]});\nFound:    ({output.strip()})")
         for item in items:
             output = pr.execute(item[0])
-            if item[1] not in output:
+            if item[1] == output:
                 return CheckResult.wrong(f"Expected: ({item[1]});\nFound:    ({output.strip()})")
         if not pr.is_finished():
             return CheckResult.wrong("Your program unnecessarily waiting for input.")

@@ -8,7 +8,7 @@ data = [
             (("2 + 1", ""), ),
             (("2 + m", "\n".join([msg[1], msg[0]])), ("3 + 3", "")),
             (("2 + m", "\n".join([msg[1], msg[0]])), ("3 n 3", "\n".join([msg[2], msg[0]])),
-             ("m - 2", "\n".join([msg[1], msg[0]])), ("4 * 5.2", ""),),
+             ("m - 2", "\n".join([msg[1], msg[0]])), ("4 * 5.2", "")),
 
        ]  # (input data, msg sentence])
 
@@ -22,7 +22,7 @@ class FoodBlogStage1(StageTest):
             return CheckResult.wrong(f"Expected: ({msg[0]});\nFound:    ({output.strip()})")
         for item in items:
             output = pr.execute(item[0])
-            if item[1] not in output:
+            if item[1] != output.strip():
                 return CheckResult.wrong(f"Expected: ({item[1]});\nFound:    ({output.strip()})")
         if not pr.is_finished():
             return CheckResult.wrong("Your program unnecessarily waiting for input.")

@@ -1,13 +1,14 @@
+msg_0 = "Enter the equation"
 msg_1 = "Do you know what numbers are? Focus!"
 msg_2 = "Yes ... an interesting math operation. Did you sleep in class?"
 msg_3 = "Yeah... division by zero. Smart move..."
 msg_4 = "Do you want to remember the result (y / n):"
-msg_5 = "Do you want continue calculations? (y / n):"
+msg_5 = "Do you want to continue calculations? (y / n):"
 msg_6 = " ... lazy"
 msg_7 = " ... very lazy"
 msg_8 = " ... very, very lazy"
 msg_9 = "You are"
-msgs = [0] * 3
+msgs = [""] * 3
 msgs[0] = "Are you sure? It is only one digit! (y / n)"
 msgs[1] = "Don't be silly, it's just one number! Add to memory? (y / n)"
 msgs[2] = "Last chance! Do you want to be ashamed for the rest of your days? (y / n)"
@@ -34,6 +35,7 @@ def check(v1, v2, v3):
 
 
 while True:
+    print(msg_0)
     calc = input()
     x, oper, y = calc.split(" ")
     if x == "M":
@@ -62,23 +64,37 @@ while True:
                 print(msg_3)
                 continue
             print(result)
-            print(msg_4)
-            answer = input()
-            if answer == "y":
-                if is_one_digit(result):
-                    msg_index = 0
-                    while msg_index < 3:
-                        print(msgs[msg_index])
-                        answer = input()
-                        if answer == "y":
-                            msg_index += 1
-                            if msg_index == 3:
-                                memory = str(result)
-                        elif answer == "n":
-                            msg_index = 4
-                else:
-                    memory = str(result)
-            print(msg_5)
-            answer = input()
-            if answer != "y":
-                break
+            while True:
+                print(msg_4)
+                answer = input()
+                if answer == "y":
+                    if is_one_digit(result):
+                        msg_index = 0
+                        while msg_index < 3:
+                            print(msgs[msg_index])
+                            answer = input()
+                            if answer == "y":
+                                msg_index += 1
+                                if msg_index == 3:
+                                    break
+                            elif answer == "n":
+                                msg_index = 4
+                                break
+                        if msg_index == 3:
+                            memory = str(result)
+                            break
+                        elif msg_index == 4:
+                            break
+                    else:
+                        memory = str(result)
+                        break
+                elif answer == "n":
+                    break
+
+            while True:
+                print(msg_5)
+                answer = input()
+                if answer == "y":
+                    break
+                elif answer == "n":
+                    exit()

@@ -5,7 +5,7 @@ msg = ["Enter the equation",
        "Yes ... an interesting math operation. Did you sleep in class?",
        "Yeah... division by zero. Smart move...",
        "Do you want to remember the result (y / n):",
-       "Do you want continue calculations? (y / n):"]
+       "Do you want to continue calculations? (y / n):"]
 
 
 def add_enter(txt):

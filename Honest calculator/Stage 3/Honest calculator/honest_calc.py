@@ -3,7 +3,7 @@ msg_1 = "Do you know what the numbers are? Focus!"
 msg_2 = "Yes ... an interesting math operation. Did you sleep in class?"
 msg_3 = "Yeah... division by zero. Smart move..."
 msg_4 = "Do you want to remember the result (y / n):"
-msg_5 = "Do you want continue calculations? (y / n):"
+msg_5 = "Do you want to continue calculations? (y / n):"
 
 memory = "0"
 

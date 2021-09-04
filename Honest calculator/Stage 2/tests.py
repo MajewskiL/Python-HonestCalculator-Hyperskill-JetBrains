@@ -1,4 +1,7 @@
 from hstest import *
+from os import path
+
+user_file = path.join("Honest calculator", "honest_calc.py")
 
 msg = ["Enter the equation",
        "Do you know what the numbers are? Focus!",
@@ -21,6 +24,9 @@ data = [
 class FoodBlogStage1(StageTest):
     @dynamic_test(data=data)
     def test(self, *items):
+        with open(user_file, "r") as file:
+            if "eval" in file.read():
+                return CheckResult.wrong("Do not use eval() function!")
         pr = TestedProgram()
         output = pr.start()
         if msg[0] not in output:

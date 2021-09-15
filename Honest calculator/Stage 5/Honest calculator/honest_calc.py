@@ -1,18 +1,19 @@
-msg_0 = "Enter the equation"
-msg_1 = "Do you know what numbers are? Focus!"
-msg_2 = "Yes ... an interesting math operation. Did you sleep in class?"
+msg_0 = "Enter an equation"
+msg_1 = "Do you even know what numbers are? Stay focused!"
+msg_2 = "Yes ... an interesting math operation. You've slept through all classes, haven't you?"
 msg_3 = "Yeah... division by zero. Smart move..."
-msg_4 = "Do you want to remember the result (y / n):"
+msg_4 = "Do you want to store the result? (y / n):"
 msg_5 = "Do you want to continue calculations? (y / n):"
 msg_6 = " ... lazy"
 msg_7 = " ... very lazy"
 msg_8 = " ... very, very lazy"
 msg_9 = "You are"
+memory = "0"
 msgs = [""] * 3
 msgs[0] = "Are you sure? It is only one digit! (y / n)"
-msgs[1] = "Don't be silly, it's just one number! Add to memory? (y / n)"
-msgs[2] = "Last chance! Do you want to be ashamed for the rest of your days? (y / n)"
-memory = "0"
+msgs[1] = "Don't be silly! It's just one number! Add to the memory? (y / n)"
+msgs[2] = "Last chance! Do you really want to embarrass yourself? (y / n)"
+
 
 
 def is_one_digit(v):

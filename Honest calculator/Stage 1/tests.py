@@ -1,8 +1,8 @@
 from hstest import *
 
-msg = ["Enter the equation",
-       "Do you know what the numbers are? Focus!",
-       "Yes ... an interesting math operation. Did you sleep in class?"]
+msg = ["Enter an equation",
+       "Do you even know what numbers are? Stay focused!",
+       "Yes ... an interesting math operation. You've slept through all classes, haven't you?"]
 
 data = [
             (("2 + 1.1", ""), ),

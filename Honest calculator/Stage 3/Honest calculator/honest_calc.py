@@ -1,8 +1,8 @@
-msg_0 = "Enter the equation"
-msg_1 = "Do you know what the numbers are? Focus!"
-msg_2 = "Yes ... an interesting math operation. Did you sleep in class?"
+msg_0 = "Enter an equation"
+msg_1 = "Do you even know what numbers are? Stay focused!"
+msg_2 = "Yes ... an interesting math operation. You've slept through all classes, haven't you?"
 msg_3 = "Yeah... division by zero. Smart move..."
-msg_4 = "Do you want to remember the result (y / n):"
+msg_4 = "Do you want to store the result? (y / n):"
 msg_5 = "Do you want to continue calculations? (y / n):"
 
 memory = "0"

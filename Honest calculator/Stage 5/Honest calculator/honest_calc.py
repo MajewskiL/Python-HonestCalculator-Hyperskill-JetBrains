@@ -15,7 +15,6 @@ msgs[1] = "Don't be silly! It's just one number! Add to the memory? (y / n)"
 msgs[2] = "Last chance! Do you really want to embarrass yourself? (y / n)"
 
 
-
 def is_one_digit(v):
     if -10 < v < 10 and v == round(v):
         return True

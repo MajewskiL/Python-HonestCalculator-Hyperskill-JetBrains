@@ -47,6 +47,7 @@ while True:
         if oper not in "*/+-":
             print(msg_2)
         else:
+            check(x, y, oper)
             if oper == "+":
                 result = x + y
             elif oper == "-":
@@ -58,7 +59,7 @@ while True:
             else:
                 print(msg_3)
                 continue
-            check(x, y, oper)
+
             print(result)
             while True:
                 print(msg_4)

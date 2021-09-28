@@ -1,7 +1,13 @@
 from hstest import *
-from os import path
+import builtins
 
-user_file = path.join("Honest calculator", "honest_calc.py")
+
+def raise_error(message):
+    raise Exception("Do not use eval() function!")
+
+
+builtins.eval = raise_error
+
 
 msg = ["Enter an equation",
        "Do you even know what numbers are? Stay focused!",
@@ -21,20 +27,18 @@ data = [
        ]  # (input data, msg sentence])
 
 
-class FoodBlogStage1(StageTest):
+class HonestCalc(StageTest):
     @dynamic_test(data=data)
     def test(self, *items):
-        with open(user_file, "r") as file:
-            if "eval" in file.read():
-                return CheckResult.wrong("Do not use eval() function!")
         pr = TestedProgram()
         output = pr.start()
         if msg[0] not in output:
-            return CheckResult.wrong(f"Expected: ({msg[0]});\nFound:    ({output.strip()})")
+            return CheckResult.wrong(f"Expected: ({msg[0]})\nFound:    ({output.strip()})")
         for item in items:
             output = pr.execute(item[0])
-            if item[1] == output:
-                return CheckResult.wrong(f"Expected: ({item[1]});\nFound:    ({output.strip()})")
+            if item[1] != output.strip():
+                return CheckResult.wrong(f"Expected: ({item[1]})\nFound:    ({output.strip()})")
+
         if not pr.is_finished():
             return CheckResult.wrong("Your program unnecessarily waiting for input.")
 
@@ -42,4 +46,4 @@ class FoodBlogStage1(StageTest):
 
 
 if __name__ == '__main__':
-    FoodBlogStage1().run_tests()
+    HonestCalc().run_tests()

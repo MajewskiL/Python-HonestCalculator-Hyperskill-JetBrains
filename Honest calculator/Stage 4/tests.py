@@ -21,6 +21,7 @@ def add_memory(txt):
 
 
 data = [(("4 * 5", "\n".join([msg[9] + msg[6], add_memory("20.0")])), ("y", msg[5]), ("n", "")),
+        (("11 * 11.1", add_memory("122.1")), ("y", msg[5]), ("n", "")),
         (("1 * 5", "\n".join([msg[9] + msg[6] + msg[7], add_memory("5.0")])), ("y", msg[5]), ("y", msg[0]),
          ("0 + M", "\n".join([msg[9] + msg[6] + msg[8], add_memory("5.0")])), ("y", msg[5]), ("n", "")),
         (("2 / M", "\n".join([msg[9] + msg[6], add_enter(msg[3])])), ("1 * M", "\n".join([msg[9] + "".join(msg[6:9]), add_memory("0.0")])), ("n", msg[5]), ("y", msg[0]),
@@ -28,7 +29,7 @@ data = [(("4 * 5", "\n".join([msg[9] + msg[6], add_memory("20.0")])), ("y", msg[
        ]  # (input data, msg sentence])
 
 
-class FoodBlogStage1(StageTest):
+class HonestCalc(StageTest):
     @dynamic_test(data=data)
     def test(self, *items):
         pr = TestedProgram()
@@ -45,4 +46,4 @@ class FoodBlogStage1(StageTest):
 
 
 if __name__ == '__main__':
-    FoodBlogStage1().run_tests()
+    HonestCalc().run_tests()

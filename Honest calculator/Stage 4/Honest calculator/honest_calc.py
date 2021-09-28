@@ -12,7 +12,7 @@ memory = "0"
 
 
 def is_one_digit(v):
-    if -10 < v < 10 and v == round(v):
+    if -100 < v < 100 and v - round(v) == 0:
         return True
     return False
 

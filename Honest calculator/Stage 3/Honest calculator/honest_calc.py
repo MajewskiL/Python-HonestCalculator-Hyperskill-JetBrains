@@ -5,7 +5,7 @@ msg_3 = "Yeah... division by zero. Smart move..."
 msg_4 = "Do you want to store the result? (y / n):"
 msg_5 = "Do you want to continue calculations? (y / n):"
 
-memory = "0"
+memory = int()
 
 while True:
     print(msg_0)

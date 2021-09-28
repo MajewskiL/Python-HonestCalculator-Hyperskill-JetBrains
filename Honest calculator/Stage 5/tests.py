@@ -33,7 +33,7 @@ data = [(("4 * 5.0", "\n".join([msg[9] + msg[6], add_memory("20.0")])), ("n", ms
        ]  # (input data, msg sentence])
 
 
-class FoodBlogStage1(StageTest):
+class HonestCalc(StageTest):
     @dynamic_test(data=data)
     def test(self, *items):
         pr = TestedProgram()
@@ -50,4 +50,4 @@ class FoodBlogStage1(StageTest):
 
 
 if __name__ == '__main__':
-    FoodBlogStage1().run_tests()
+    HonestCalc().run_tests()

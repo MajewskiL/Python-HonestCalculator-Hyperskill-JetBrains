@@ -20,7 +20,7 @@ def add_memory(txt):
     return "\n".join([txt, msg[4]])
 
 
-data = [(("4 * 5", "\n".join([msg[9] + msg[6], add_memory("20.0")])), ("y", msg[5]), ("n", "")),
+data = [(("4 * 5.5", add_memory("22.0")), ("y", msg[5]), ("n", "")),
         (("11 * 11.1", add_memory("122.1")), ("y", msg[5]), ("n", "")),
         (("1 * 5", "\n".join([msg[9] + msg[6] + msg[7], add_memory("5.0")])), ("y", msg[5]), ("y", msg[0]),
          ("0 + M", "\n".join([msg[9] + msg[6] + msg[8], add_memory("5.0")])), ("y", msg[5]), ("n", "")),
